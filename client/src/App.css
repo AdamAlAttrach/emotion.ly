@@ -51,7 +51,7 @@ body {
 
 body::before {
 	animation: grain 8s steps(10) infinite;
-	background-image: url(./src/components/genres/images/noise.png);
+	background-image: url(./images/noise.png);
 	content: '';
 	height: 300%;
 	left: -50%;

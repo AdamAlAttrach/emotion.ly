@@ -23,9 +23,6 @@ const Genres = () => {
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
                         <span>Pop</span>
-                        <span>Pop</span>
-                        <span>Pop</span>
-                        <span>Pop</span>
                     </div>
                 </div>
             </div>
@@ -34,9 +31,6 @@ const Genres = () => {
                 <img className="genre-img" src={rock_img} alt="Rock icon"></img>
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
-                        <span>Rock</span>
-                        <span>Rock</span>
-                        <span>Rock</span>
                         <span>Rock</span>
                     </div>
                 </div>
@@ -47,9 +41,6 @@ const Genres = () => {
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
                         <span>Jazz</span>
-                        <span>Jazz</span>
-                        <span>Jazz</span>
-                        <span>Jazz</span>
                     </div>
                 </div>
             </div>
@@ -58,9 +49,6 @@ const Genres = () => {
                 <img className="genre-img" src={metal_img} alt="Metal icon"></img>
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
-                        <span>Metal</span>
-                        <span>Metal</span>
-                        <span>Metal</span>
                         <span>Metal</span>
                     </div>
                 </div>
@@ -71,9 +59,6 @@ const Genres = () => {
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
                         <span>Classical</span>
-                        <span>Classical</span>
-                        <span>Classical</span>
-                        <span>Classical</span>
                     </div>
                 </div>
             </div>
@@ -82,9 +67,6 @@ const Genres = () => {
                 <img className="genre-img" src={hiphop_img} alt="Hip-Hop icon"></img>
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
-                        <span>Hip-Hop</span>
-                        <span>Hip-Hop</span>
-                        <span>Hip-Hop</span>
                         <span>Hip-Hop</span>
                     </div>
                 </div>
@@ -95,9 +77,6 @@ const Genres = () => {
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
                         <span>Electronic</span>
-                        <span>Electronic</span>
-                        <span>Electronic</span>
-                        <span>Electronic</span>
                     </div>
                 </div>
             </div>
@@ -106,9 +85,6 @@ const Genres = () => {
                 <img className="genre-img" src={country_img} alt="Country icon"></img>
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
-                        <span>Country</span>
-                        <span>Country</span>
-                        <span>Country</span>
                         <span>Country</span>
                     </div>
                 </div>
@@ -119,9 +95,6 @@ const Genres = () => {
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
                         <span>Dubstep</span>
-                        <span>Dubstep</span>
-                        <span>Dubstep</span>
-                        <span>Dubstep</span>
                     </div>
                 </div>  
             </div>
@@ -130,9 +103,6 @@ const Genres = () => {
                 <img className="genre-img" src={latin_img} alt="Latin icon"></img>
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
-                        <span>Latin</span>
-                        <span>Latin</span>
-                        <span>Latin</span>
                         <span>Latin</span>
                     </div>
                 </div>
@@ -143,9 +113,6 @@ const Genres = () => {
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
                         <span>Soul</span>
-                        <span>Soul</span>
-                        <span>Soul</span>
-                        <span>Soul</span>
                     </div>
                 </div>
             </div>
@@ -155,21 +122,15 @@ const Genres = () => {
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
                         <span>Blues</span>
-                        <span>Blues</span>
-                        <span>Blues</span>
-                        <span>Blues</span>
                     </div>
                 </div>
             </div>
             <div className="genre R-n-B">
-                <button>R-n-B</button>
+                <button>RnB</button>
                 <img className="genre-img" src={rnb_img} alt="R&B icon"></img>
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
-                        <span>R-n-B</span>
-                        <span>R-n-B</span>
-                        <span>R-n-B</span>
-                        <span>R-n-B</span>
+                        <span>RnB</span>
                     </div>
                 </div>
             </div>
@@ -178,9 +139,6 @@ const Genres = () => {
                 <img className="genre-img" src={reggae_img} alt="Reggae icon"></img>
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
-                        <span>Reggae</span>
-                        <span>Reggae</span>
-                        <span>Reggae</span>
                         <span>Reggae</span>
                     </div>
                 </div>
