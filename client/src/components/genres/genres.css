@@ -21,7 +21,7 @@
 
 /* Grainy texture animation by Geoff Graham https://css-tricks.com/snippets/css/animated-grainy-texture/ */
 
-/*instead of main we apply this to genres-menu class*/
+/*instead of main we apply this to nav*/
 
 /*moved the main before to app.css*/
 nav::before {
