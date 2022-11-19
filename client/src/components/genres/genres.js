@@ -1,6 +1,6 @@
 import './genres.css';
 
-const genres = () => {
+const Genres = () => {
     return (
         <nav className="genres-menu">
             <div className="genre Pop" >
@@ -174,3 +174,5 @@ const genres = () => {
         </nav>
     )
 }
+
+export default Genres
