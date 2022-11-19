@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+body {
+	margin: 0;
+	--color-text: #111;
+	--color-bg: #f8ecde;
+	--color-link: #b19e7f;
+	--color-link-hover: #000;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: sofia-pro, sans-serif;
+}
+
+body::before {
+	animation: grain 8s steps(10) infinite;
+	background-image: url(./images/noise.png);
+	content: '';
+	height: 300%;
+	left: -50%;
+	opacity: 0.6;
+	position: fixed;
+	top: -100%;
+	width: 300%;
+}
