@@ -12,7 +12,7 @@ def home():
     return "<p>Hello, World!</p>"
 
 # Text analysis route
-@app.route("/songs")
+@app.route("/playlist")
 def getSongs():
     genres = request.args.get("genres")
     text = request.args.get("text")
