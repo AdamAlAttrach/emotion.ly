@@ -1,6 +1,6 @@
 import React from 'react'
-import InputText from './components/InputText'
-import Layout from "./components/InputText"
+import InputText from './components/InputText/InputText'
+import Layout from "./components/InputText/InputText"
 import './index.css'
 import Genres from './components/genres/Genres'
 
