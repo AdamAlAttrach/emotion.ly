@@ -24,6 +24,17 @@
 /*instead of main we apply this to genres-menu class*/
 
 /*moved the main before to app.css*/
+nav::before {
+	animation: grain 8s steps(10) infinite;
+	background-image: url(./images/noise.png);
+	content: '';
+	height: 300%;
+	left: -50%;
+	opacity: 0.6;
+	position: fixed;
+	top: -100%;
+	width: 300%;
+}
 
 @keyframes grain {
   0%, 100% { transform:translate(0, 0); }
@@ -38,14 +49,14 @@
   90% { transform:translate(-10%, 10%); }
 }
 
-a {
+button {
 	text-decoration: none;
 	color: var(--color-link);
 	outline: none;
 }
 
-a:hover,
-a:focus {
+button:hover,
+button:focus {
 	color: var(--color-link-hover);
 	outline: none;
 }
@@ -75,7 +86,7 @@ a:focus {
 
 /* instead of using classname for <a> elements, applied style directly to them */
 
-a {
+button {
 	display: inline-block;
 	cursor: pointer;
 	position: relative;
@@ -90,7 +101,7 @@ a {
 	transition: opacity 0.4s;
 }
 
-a::before {
+button::before {
 	all: initial;
 	font-family: sofia-pro, sans-serif;
 	counter-increment: menu;
@@ -101,7 +112,7 @@ a::before {
 	pointer-events: none;
 }
 
-a:hover {
+button:hover {
 	transition-duration: 0.1s;
 	opacity: 0;
 }
@@ -110,14 +121,15 @@ a:hover {
 	pointer-events: none;
 	position: absolute;
 	height: 50vh;
-	max-height: 400px;
+    max-height: 400px;
+    max-width: 50%;
 	opacity: 0;
 	left: 100%;
 	top: 50%;
 	transform: translate3d(calc(-100% - 6vw),-30%,0) translate3d(0,20px,0);
 }
 
-a:hover + .genre-img {
+button:hover + .genre-img {
 	opacity: 1;
 	transform: translate3d(calc(-100% - 6vw),-30%,0) rotate3d(0,0,1,4deg);
 	transition: all 0.4s;
@@ -146,7 +158,7 @@ a:hover + .genre-img {
 	transition: opacity 0.1s;
 }
 
-a:hover ~ .effect .effect-activate {
+button:hover ~ .effect .effect-activate {
 	animation-play-state: running;
 	opacity: 1;
 	transition-duration: 0.4s;
@@ -156,7 +168,7 @@ a:hover ~ .effect .effect-activate {
 	text-align: center;
 }
 
-a,
+button,
 .effect span {
 	white-space: nowrap;
 	font-size: var(--item-font-size);
