@@ -6,7 +6,7 @@ import pprint
 
 CLIENT_ID = "0ac9bed4afae4f54a89cf95f43c0542f"
 CLIENT_SECRET = "2bb61656c350462bb4a3bfb16acf3026"
-OAUTH_TOKEN = "BQCyxDA1wXfgR5Le8LMKYNlmlmOvEe8p-hv4EB9MnbWCCDUZOUXUEyP7tkFSpns424HhITTVX0UOv5OWEM0Uc2elIdrrgPPF6aMzju0lm5BBuEyTVXiAnw4NGrvJs-Enrs-LBlB2QlZSIMg8Ubtm8J0hSUXTd8ErxXqzDvJvqAOLtAld"
+OAUTH_TOKEN = "BQDTlMy3wG7KH2ndg5-Jab8frl5Dakj-HIp7s8F6IXDxoub_idsrI7p4MThtm3_hbOr2_nVsG42rOwoF0MOk5qgIXA4BUHBUowc5-x-EmYMjyuQ0GnOOqz-QELftoXfEEAWzVtR8F-Alv8aXZgLyhkTBTRHGVU4svPmQ2g9Qfvdjy9WE"
 
 emotion_to_energy_valence = {"Angry": [-0.4, 0.79], "Fear": [-0.12, 0.79],
                              "Happy": [0.89, 0.17], "Sad": [-0.81, -0.4], "Surprise": [0.7, 0.71]}
