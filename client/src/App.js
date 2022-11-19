@@ -1,9 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import _axios from 'axios';
 
+
+const axios = _axios.create({ baseURL: 'http://localhost:5000'});
+
 function App() {
 
-  const [songs, setSongs] = useState('')
+  const [songs, setSongs] = useState([])
   
   useEffect( () => {
     getSongs();
@@ -13,14 +16,14 @@ function App() {
     axios.get('/songs').then((response) => {
       console.log(response.data)
       const allSongs = response.data;
-      setDSongs(allSongs.hello)
+      setSongs(allSongs.hello)
     })
     .catch(() => console.log("error"))
   }
 
   return (
     <div>
-      {songs}  
+      {songs.map( (song) => <h1>{song}</h1> )}
     </div>
   )
 }

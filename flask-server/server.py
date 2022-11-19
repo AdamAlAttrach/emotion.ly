@@ -1,8 +1,11 @@
-from flask import Flask
+from flask import Flask, request
+from flask_cors import CORS
+from helpers import helper_functions
+
 
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route('/')
 def home():
@@ -10,8 +13,9 @@ def home():
 
 # Text analysis route
 @app.route("/songs")
-def songs():
-    return {"hello": ["world", "world", "world"]}
+def getSongs():
+    text = request.args.get("text")
+    
 
 
 if __name__ == "__main__":
