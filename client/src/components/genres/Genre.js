@@ -1,8 +1,6 @@
 import React from 'react'
-import rnb_img from "./images/rnb.jpg"
 
 const Genre = ({genre, genres, updateGenres}) => {
-
   
   return (
     <div className="genre" >
