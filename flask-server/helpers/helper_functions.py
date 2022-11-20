@@ -1,12 +1,10 @@
 import text2emotion as te
 import requests
-from urllib.parse import urlencode
-import pprint
-
+import json
 
 CLIENT_ID = "0ac9bed4afae4f54a89cf95f43c0542f"
 CLIENT_SECRET = "2bb61656c350462bb4a3bfb16acf3026"
-OAUTH_TOKEN = "BQDTlMy3wG7KH2ndg5-Jab8frl5Dakj-HIp7s8F6IXDxoub_idsrI7p4MThtm3_hbOr2_nVsG42rOwoF0MOk5qgIXA4BUHBUowc5-x-EmYMjyuQ0GnOOqz-QELftoXfEEAWzVtR8F-Alv8aXZgLyhkTBTRHGVU4svPmQ2g9Qfvdjy9WE"
+OAUTH_TOKEN = "BQAYpWHmeawhpeuKYLMQYckw8shGvqq6y_Dh9r4wGRHz8cgd5BfZ98ns8KVvdiCK6lLcTRvkYOOOf7pcG_SpQ4qe-ul3paWkU8zF98thpLmXkJNHGo6h--b2Bxtj5huNzrwGyiIe3mYv6MV6Jn2Ku4Ypucs9lcsl8rCmSAPIE4CO9J1E"
 
 emotion_to_energy_valence = {"Angry": [-0.4, 0.79], "Fear": [-0.12, 0.79],
                              "Happy": [0.89, 0.17], "Sad": [-0.81, -0.4], "Surprise": [0.7, 0.71]}
@@ -31,6 +29,9 @@ def get_valence_energy(emotions):
 
 
 def get_songs(valence, energy, limit, genres):
+
+    final_json = {'tracks': []}
+
     headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -48,4 +49,54 @@ def get_songs(valence, energy, limit, genres):
     response = requests.get(
         'https://api.spotify.com/v1/recommendations', params=params, headers=headers)
 
-    return response.json()
+    data = json.loads(response.text)
+    for track in data['tracks']:
+        artist = track['artists'][0]['name']
+        song_name = track['name']
+        image_src = track['album']['images'][0]['url']
+        final_json['tracks'].append({
+            'artist': artist,
+            'name': song_name,
+            'cover': image_src,
+        })
+
+    return final_json
+
+
+def add_mp3_url(songs_json):
+
+    for i in songs_json['tracks']:
+        q_str = f"{i['name']} by {i['artist']}"
+        url = "https://youtube-music1.p.rapidapi.com/v2/search"
+
+        querystring = {"query": q_str}
+
+        headers = {
+            "X-RapidAPI-Key": "27ea075167msh27f49714cc55f08p17b9f1jsn8b86e950000a",
+            "X-RapidAPI-Host": "youtube-music1.p.rapidapi.com"
+        }
+
+        response = requests.request(
+            "GET", url, headers=headers, params=querystring)
+
+        data = json.loads(response.text)
+        song_id = data['result']['songs'][0]['id']
+        i['id'] = song_id
+
+        url = "https://youtube-music1.p.rapidapi.com/get_download_url"
+
+        querystring_mp3 = {"id": song_id, "ext": "mp3"}
+
+        headers_mp3 = {
+            "X-RapidAPI-Key": "27ea075167msh27f49714cc55f08p17b9f1jsn8b86e950000a",
+            "X-RapidAPI-Host": "youtube-music1.p.rapidapi.com"
+        }
+
+        response2 = requests.request(
+            "GET", url, headers=headers_mp3, params=querystring_mp3)
+
+        data2 = json.loads(response2.text)
+        mp3_url = data2['result']['download_url']
+        i['audio'] = mp3_url
+
+    return songs_json
