@@ -9,22 +9,23 @@ const axios = _axios.create({ baseURL: env.appServer });
 
 const PlayerView = () => {
 
-    const [playlist, setPlaylist] = useState();
+    const [apiLinks, setAPILinks] = useState();
+    const [playlist, setPlaylist] = useState([])
     const navigate = useNavigate();
     const location = useLocation();
 
-    const params = {
-                    text: "I am so sad",
-                    genres: "hip-hop, classical"
-    }
+    // const params = {
+    //                 "text": "I am so sad",
+    //                 "genres": "hip-hop"
+    // }
     useEffect(() => {
-        axios.get("/playlist", {params})
-            .then(response => response.data ? setPlaylist(response.data) : navigate('/'))
+        axios.get("/playlist", {params: {"text": "I am so sad", "genres": "hip-hop"}})
+            .then(response => response.data ? setAPILinks(response.data) : navigate('/'))
             .catch(e => navigate('/'));
     },[]);
     
     function data(songs){
-        return songs.map((song, index) => {
+        const playlistSongs = apiLinks.tracks.map((song, index) => {
             if (index == 0){
                 return {...song, active: "True", color: ["#CD607D", "#c94043"]}
             }
@@ -32,13 +33,16 @@ const PlayerView = () => {
                 return {...song, color: ["#CD607D", "#c94043"]}
             }
         })
+        setPlaylist(playlistSongs)
     }
         
         
     
     return (
         <div>
-            <MusicPlayer songs = {data(playlist)}/>
+            {/* <h1>JSON.stringify(playlist)</h1>
+            <MusicPlayer songs = {data(playlist)}/> */}
+            
         </div>
 
     );
