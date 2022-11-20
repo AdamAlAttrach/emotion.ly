@@ -3,6 +3,7 @@ import { useNavigate, useLocation} from 'react-router-dom';
 import _axios from 'axios';
 import { env } from '../env';
 import MusicPlayer from "../components/Player/MusicPlayer";
+import Loader from "./Loader";
 
 
 
@@ -19,17 +20,30 @@ const PlayerView = () => {
                     text: location.state.text,
                     genres: location.state.genres
     }
-    useEffect(() => {
-        axios.get('/playlist', {params: par})
+
+    const getting_data = async () => {
+        try {
+        const data = await axios 
+            .get('/playlist', {params: par})
             .then(response => response.data ? setPlaylist(response.data) : navigate('/'))
-            .catch(e => navigate('/'));
-    },[]);
+            setLoading(true)
+        } catch(e) {
+            console.log(e)
+        }
+    };
+
+
+
+    useEffect(()=>{
+        getting_data()
+    },[])
 
     return (
-        <div>
-            {playlist ? <MusicPlayer playlist = {playlist.tracks}/> : console.log("Error")}
+        <div> 
+            {/* {playlist ? <MusicPlayer playlist = {playlist.tracks}/> : console.log("Error")} */}
+            {loading ? (<MusicPlayer playlist = {playlist.tracks}/>) : (<Loader/>)}
         </div>
-
+ 
     );
 };
 
