@@ -8,3 +8,16 @@
 #message{
     margin-bottom: 20px;
 }
+
+.swag {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	-webkit-text-stroke: 1.5px #000;
+    stroke-width: 1.5px;
+    stroke: #000;
+    fill: transparent;
+	-webkit-text-fill-color: transparent; 
+	color: transparent;
+	transition: opacity 0.4s;
+}

@@ -41,9 +41,9 @@ export const Layout = () => {
 
   return (
     <div className='bg-[#f8ecde]'>
-      <InputText setText = {setText}/>
-      <button type = "submit" onClick={handleSubmit} class="bg-indigo-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-        I feel you
+      <InputText setText = {setText} className=" py-20"/>
+      <button type = "submit" onClick={handleSubmit} class="bg-[#840000] hover:text-black hover:bg-[#F8EBDD] text-white font-bold py-2 px-4 ml-[650px] border-2 border-[#840000] hover:border-[#840000] hover:text-[#840000] rounded w-[150px] relative">
+        Talk to me
       </button>
       <Genres genres = {genres} updateGenres = {updateGenres}/>
     
