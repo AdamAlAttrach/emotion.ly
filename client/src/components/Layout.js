@@ -1,24 +1,51 @@
 import React, {useState} from 'react'
 import Genres from './genres/Genres';
 import InputText from './InputText/InputText';
-
+import GenresList from './genres/genre_list';
+import {useNavigate} from 'react-router-dom'
 
 export const Layout = () => {
   
+  const navigate = useNavigate()
+  const [text, setText] = useState("");
+  const [genres, setGenres] = useState(GenresList())
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(text,genres);
-    // ... submit to API or something
+    const selected = genres.filter(obj => {return obj.isSelected}).map(obj => {
+        return obj.title;
+    })
+    const selectedGenres = selected.toString();
+    
+    navigate('/playlist', {
+      state: {
+        text: text,
+        genres: selectedGenres
+      }
+    });
   };
-  const [text, setText] = useState("");
-  const [genres, setGenres] = useState([])
+  
+
+  const updateGenres = (genre, genreList) => {
+    setGenres(genreList.map(obj => {
+        if (obj.title === genre.title) {
+          return {...obj, isSelected: !obj.isSelected};
+        }
+  
+        return obj;
+      })
+    );
+  };
+
+  
+
   return (
     <div>
       <InputText setText = {setText}/>
-      <button onClick={handleSubmit} class="bg-indigo-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+      <button type = "submit" onClick={handleSubmit} class="bg-indigo-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
         I feel you
       </button>
-      <Genres genres = {genres} setGenres = {setGenres}/>
+      <Genres genres = {genres} updateGenres = {updateGenres}/>
     
   
     </div>
