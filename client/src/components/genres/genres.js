@@ -15,5 +15,4 @@ const Genres = ({genres, updateGenres}) => {
         </nav>
     )
 }
-
 export default Genres

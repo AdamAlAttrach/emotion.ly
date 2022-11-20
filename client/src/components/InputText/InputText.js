@@ -9,10 +9,14 @@ function InputText({setText}) {
     );
   };
   return (
-    <div className='container bg-[#f8ecde]'> 
-      <label for="message" class="block mb-2 text-sm font-medium text-gray-900 home">Talk to me</label> 
-      <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Write your thoughts here..." onChange={handleChange}></textarea> 
+    <div className='container flex bg-[#f8ecde] pl-10'>
+    <div>
+      <h1 class="swag text-9xl pb-10">emotion.ly</h1> 
     </div>
+      <textarea id="message" rows="4" class="outline-none bg-slate-400/10 rounded-sm border-b w-[600px] h-[150px] ml-[-175px] mt-[150px] border-[#242424] text-[#840000] placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 hover:border-[#F7AB0A]/40" placeholder="Write your thoughts here..." onChange={handleChange}></textarea> 
+
+    </div>
+    
     
 
     
