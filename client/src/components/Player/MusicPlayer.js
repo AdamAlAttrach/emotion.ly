@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
-import "./index.css";
+import "./player.css";
 
 // Import components
 import Player from "./components/Player";
