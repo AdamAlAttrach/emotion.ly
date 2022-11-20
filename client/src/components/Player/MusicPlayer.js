@@ -58,7 +58,7 @@ const MusicPlayer = ({playlist}) => {
 	return (
 		<AppContainer className = "music-body" libraryStatus={libraryStatus}>
 			<div className="music-body-div">
-				<NavBar libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
+				<NavBar libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus}/>
 				<Song currentSong={currentSong} />
 				<Player
 					isPlaying={isPlaying}

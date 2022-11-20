@@ -1,16 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMusic } from "@fortawesome/free-solid-svg-icons";
+import { faMusic, faHome, faRedo} from "@fortawesome/free-solid-svg-icons";
+import {useNavigate} from 'react-router-dom'
 
 const NavBar = ({ libraryStatus, setLibraryStatus }) => {
+	const navigate = useNavigate();
+
 	return (
 		<NavContainer>
 			<H1 libraryStatus={libraryStatus}>Emotion.ly</H1>
-			<ButtonNav onClick={() => setLibraryStatus(!libraryStatus)}>
-				My Playlist {`\t`}
-				<FontAwesomeIcon icon={faMusic} />
-			</ButtonNav>
+			<div>
+				<ButtonNav onClick={() => navigate('/')}>
+					Home {`\t`}
+					<FontAwesomeIcon icon={faHome} />
+				</ButtonNav>
+				
+				<ButtonNav onClick={() => setLibraryStatus(!libraryStatus)}>
+					My Playlist {`\t`}
+					<FontAwesomeIcon icon={faMusic} />
+				</ButtonNav>
+			</div>
+			
 		</NavContainer>
 	);
 };
@@ -50,6 +61,7 @@ const ButtonNav = styled.button`
 		background: rgb(65, 65, 65);
 		color: white;
 	}
+	margin: 5px;
 `;
 
 export default NavBar;

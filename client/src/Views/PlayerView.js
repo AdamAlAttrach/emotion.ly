@@ -20,27 +20,24 @@ const PlayerView = () => {
                     text: location.state.text,
                     genres: location.state.genres
     }
-
+  
     const getting_data = async () => {
         try {
         const data = await axios 
             .get('/playlist', {params: par})
             .then(response => response.data ? setPlaylist(response.data) : navigate('/'))
-            setLoading(true)
+             setLoading(true)
         } catch(e) {
             console.log(e)
         }
     };
-
-
-
+    
     useEffect(()=>{
         getting_data()
     },[])
 
     return (
         <div> 
-            {/* {playlist ? <MusicPlayer playlist = {playlist.tracks}/> : console.log("Error")} */}
             {loading ? (<MusicPlayer playlist = {playlist.tracks}/>) : (<Loader/>)}
         </div>
  
