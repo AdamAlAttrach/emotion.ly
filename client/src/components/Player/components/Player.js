@@ -98,7 +98,7 @@ const Player = ({
 					<AnimateTrack songInfo={songInfo}></AnimateTrack>
 				</Track>
 
-				<P>{getTime(songInfo.duration || 0)}</P>
+				{/* <P>{getTime(songInfo.duration || 0)}</P> */}
 			</TimeControlContainer>
 
 			<PlayControlContainer>

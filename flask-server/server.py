@@ -21,7 +21,7 @@ def getSongs():
     text = request.args.get("text")
     emotion = hf.get_emotion_keywords(text)
     valence, energy = hf.get_valence_energy(emotion)
-    songs = hf.get_songs(valence, energy, 10, genres)
+    songs = hf.get_songs(valence, energy, '7', genres)
     return hf.add_mp3_url(songs)
 
 

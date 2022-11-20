@@ -42,7 +42,7 @@ export const Layout = () => {
   return (
     <div className='bg-[#f8ecde]'>
       <InputText setText = {setText} className=" py-20"/>
-      <button type = "submit" onClick={handleSubmit} class="bg-[#840000] hover:text-black hover:bg-[#F8EBDD] text-white font-bold py-2 px-4 ml-[650px] border-2 border-[#840000] hover:border-[#840000] hover:text-[#840000] rounded w-[150px] relative">
+      <button type = "submit" onClick={handleSubmit} class="bg-[#840000] hover:bg-[#F8EBDD] text-white font-bold py-2 px-4 ml-[780px] border-2 border-[#840000] hover:border-[#840000] hover:text-[#840000] rounded w-[150px] relative">
         Talk to me
       </button>
       <Genres genres = {genres} updateGenres = {updateGenres}/>
