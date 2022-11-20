@@ -104,3 +104,4 @@ def add_mp3_url(songs_json):
     songs_json['tracks'][0]['active'] = True
 
     return songs_json
+
