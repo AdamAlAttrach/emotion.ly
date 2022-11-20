@@ -4,7 +4,7 @@ import json
 
 CLIENT_ID = "0ac9bed4afae4f54a89cf95f43c0542f"
 CLIENT_SECRET = "2bb61656c350462bb4a3bfb16acf3026"
-OAUTH_TOKEN = "BQB1iQ_qsEKlI3TjHWFPooDzjFXmDhlxNcAbuIgE95UWnV52DWkTx8_m6YT3hBLlM4GTiuFjItweZ3rX-lAqWG7st4xy4WK47odP-xQPcB9t7gzu2FsqLLREy58cVLGfbzoOrTMZSG0Qw7h_3kvyf1tAbrYn9Cp0hhQ4h03M6Xuq19JA"
+OAUTH_TOKEN = "BQBIby2ZSIWIw_Gn2rOoWnEptnFzmH-nANOr47GgtL-dAYbLse8B5xY5ttnHG3iGdFtNF9LGYTKytd0mgVbZSFCO97YnGMr6BXtU1De2hXgQN2GnoOkfTygF3vnpKh29Dm4tjM1MhRFoJ6nu5LrdDePNaUqmaijxG3H6fpLPffhu9d2z"
 
 emotion_to_energy_valence = {"Angry": [-0.4, 0.79], "Fear": [-0.12, 0.79],
                              "Happy": [0.89, 0.17], "Sad": [-0.81, -0.4], "Surprise": [0.7, 0.71]}
@@ -42,8 +42,8 @@ def get_songs(valence, energy, limit, genres):
         'limit': limit,
         'market': 'US',
         'seed_genres': genres,
-        'min_energy': energy,
-        'min_valence': valence,
+        'target_energy': energy,
+        'target_valence': valence,
     }
 
     response = requests.get(
@@ -66,6 +66,7 @@ def get_songs(valence, energy, limit, genres):
 def add_mp3_url(songs_json):
 
     for i in songs_json['tracks']:
+        print(i)
         q_str = f"{i['name']} by {i['artist']}"
         url = "https://youtube-music1.p.rapidapi.com/v2/search"
 

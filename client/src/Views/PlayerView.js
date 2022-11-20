@@ -15,12 +15,12 @@ const PlayerView = () => {
     const [loading, setLoading] = useState(false);
     const location = useLocation();
 
-    const params = {
-                    text: "I am so sad",
-                    genres: "hip-hop"
+    const par = {
+                    text: location.state.text,
+                    genres: location.state.genres
     }
     useEffect(() => {
-        axios.get(`/playlist?text=I am so sad&genres=hip-hop`)
+        axios.get('/playlist', {params: par})
             .then(response => response.data ? setPlaylist(response.data) : navigate('/'))
             .catch(e => navigate('/'));
     },[]);
