@@ -28,7 +28,9 @@ def get_valence_energy(emotions):
     return final_point
 
 
-def get_songs(valence, energy, limit, genres):
+def get_songs(valence, energy, limit, genres_arr):
+
+    genres = ','.join(genres_arr)
 
     final_json = {'tracks': []}
 
@@ -104,4 +106,3 @@ def add_mp3_url(songs_json):
     songs_json['tracks'][0]['active'] = True
 
     return songs_json
-
