@@ -2,8 +2,6 @@ import React from 'react'
 import InputText from './components/InputText/InputText'
 import Layout from "./components/InputText/InputText"
 import './index.css'
-import Genres from './components/genres/Genres'
-import {useNavigate} from 'react-router-dom'
 
 function App() {
   const navigate = useNavigate();
@@ -14,10 +12,7 @@ function App() {
 
   return (
     <div>
-      <button onClick = {() => toPlayer()}>Test</button>
-      <InputText />
-      <Genres />
-
+      <Layout />
     </div>
 
   )
