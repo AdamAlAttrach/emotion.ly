@@ -9,9 +9,9 @@ function InputText({setText}) {
     );
   };
   return (
-    <div className='container bg-[#f8ecde]'>
-      <div className='text-indigo-500'>Talk to me</div>
-      <textarea name="text" type="text" className='w-[1000px] h-96' onChange={handleChange}/>
+    <div className='container bg-[#f8ecde]'> 
+      <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Talk to me</label> 
+      <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Write your thoughts here..." onChange={handleChange}></textarea> 
     </div>
     
 
