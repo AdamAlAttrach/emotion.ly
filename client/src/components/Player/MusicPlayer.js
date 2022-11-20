@@ -7,15 +7,14 @@ import Player from "./components/Player";
 import Song from "./components/Song";
 import Library from "./components/Library";
 import Nav from "./components/Nav";
-// Import data
-import data from "./data";
 
-const MusicPlayer = () => {
+
+const MusicPlayer = ({playlist}) => {
 	// Ref
 	const audioRef = useRef(null);
 
 	// State
-	const [songs, setSongs] = useState(data());
+	const [songs, setSongs] = useState(playlist);
 	const [currentSong, setCurrentSong] = useState(songs[0]);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [libraryStatus, setLibraryStatus] = useState(false);
