@@ -4,7 +4,7 @@ import json
 
 CLIENT_ID = "0ac9bed4afae4f54a89cf95f43c0542f"
 CLIENT_SECRET = "2bb61656c350462bb4a3bfb16acf3026"
-OAUTH_TOKEN = "BQBn81bGUtJPvTphN4FEm2loyqWrUv99BUkiaAwjunPdjC1KR6b76Tg8xKAy35Ya5ve8gqVSYdOSKaKpT8b1DEaAeLLKlPvkqKH4HueBxEzFRFpgmyP_36PIRzORT85P_dzwjTej5G_Ek0yj8Q-z762FqOZ9vYTEpyEJF2_vvVvqJ3Cq"
+OAUTH_TOKEN = "BQB2FexBM0AZeDyDjj20JA36fQZj1pguuMsRqHtyBqjUxWWuAodej2NNGDGM2SWvuNNpk41fOy2uVnKnH3Gf0TRISJR3tt2aYYyGocadiavLJTWVEO1XBk3xLYIDfA4_0QFE65dl-Y1KkiPkr30DJVC0-VCKNNB78Cc_1x2g_gyHsG1b"
 
 emotion_to_energy_valence = {"Angry": [-0.4, 0.79], "Fear": [-0.12, 0.79],
                              "Happy": [0.89, 0.17], "Sad": [-0.81, -0.4], "Surprise": [0.7, 0.71]}
@@ -98,5 +98,9 @@ def add_mp3_url(songs_json):
         data2 = json.loads(response2.text)
         mp3_url = data2['result']['download_url']
         i['audio'] = mp3_url
+        i['active'] = False
+        i['color'] = ["#CD607D", "#c94043"]
+
+    songs_json['tracks'][0]['active'] = True
 
     return songs_json
