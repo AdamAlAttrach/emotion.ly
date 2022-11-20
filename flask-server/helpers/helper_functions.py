@@ -4,8 +4,7 @@ import json
 
 CLIENT_ID = "0ac9bed4afae4f54a89cf95f43c0542f"
 CLIENT_SECRET = "2bb61656c350462bb4a3bfb16acf3026"
-OAUTH_TOKEN = "BQDW6njaarJ7540q_DCXm5wYNfcs-jnCsCoKAQOA1hm7tniCFVWwxWAEQCbrx382R5rUSU0eYW5XYjpGjrmwzZg35vegWpleDquSA2zi0siwfCd3wgKjvrmiNgS9bfKmXHRAUh8ApaJ-phvf1A-zXvqN4alV3yXPV0rZ4_wedmTFSmUP"
-
+OAUTH_TOKEN = "BQCHSP70BV5NN7wyfJJqa5FPsjVe1lx5oT4ino5TeuQeXJgGpH6EvS22I8yr5Qyy_R2-X5Tw-DrVfa_xFCWXV4w_cMjhQ1AMgGQthLs6SiEH0-3DKIKR2RVk5YKKA4R6klJIA29TQ22CpNhVTRzQfv5RBm6yB4VRSXdGWapexNG3h0KA"
 emotion_to_energy_valence = {"Angry": [-0.4, 0.79], "Fear": [-0.12, 0.79],
                              "Happy": [0.89, 0.17], "Sad": [-0.81, -0.4], "Surprise": [0.7, 0.71]}
 
@@ -17,20 +16,16 @@ def get_emotion_keywords(text):
 def get_valence_energy(emotions):
 
     final_point = [0, 0]
-    print(emotions)
     for emotion in emotions:
         scale = emotions[emotion]
         point = [x * scale for x in emotion_to_energy_valence[emotion]]
         final_point[0] += point[0]
         final_point[1] += point[1]
 
-    print(final_point)
     return final_point
 
 
 def get_songs(valence, energy, limit, genres):
-
-    #genres = ','.join(genres_arr)
 
     final_json = {'tracks': []}
 
@@ -43,7 +38,7 @@ def get_songs(valence, energy, limit, genres):
     params = {
         'limit': limit,
         'market': 'US',
-        'seed_genres': genres,
+        'seed_genres': genres.lower(),
         'target_energy': energy,
         'target_valence': valence,
     }
@@ -52,6 +47,7 @@ def get_songs(valence, energy, limit, genres):
         'https://api.spotify.com/v1/recommendations', params=params, headers=headers)
 
     data = json.loads(response.text)
+    print(data)
     for track in data['tracks']:
         artist = track['artists'][0]['name']
         song_name = track['name']
@@ -68,7 +64,6 @@ def get_songs(valence, energy, limit, genres):
 def add_mp3_url(songs_json):
 
     for i in songs_json['tracks']:
-        print(i)
         q_str = f"{i['name']} by {i['artist']}"
         url = "https://youtube-music1.p.rapidapi.com/v2/search"
 

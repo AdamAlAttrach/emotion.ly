@@ -16,16 +16,12 @@ def home():
 
 @app.route("/playlist")
 def getSongs():
-    
+
     genres = request.args.get("genres").lower()
-    print("this is the genres" + genres)
     text = request.args.get("text")
-    print("this is the text "+ text)
     emotion = hf.get_emotion_keywords(text)
-    print(emotion)
     valence, energy = hf.get_valence_energy(emotion)
     songs = hf.get_songs(valence, energy, 10, genres)
-    print(songs)
     return hf.add_mp3_url(songs)
 
 
