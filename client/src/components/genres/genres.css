@@ -1,4 +1,4 @@
-/*,
+/* ,
 *::after,
 *::before {
 	box-sizing: border-box;
@@ -26,14 +26,14 @@
 
 /*moved the main before to app.css*/
 
-button {
+.genre-button {
 	text-decoration: none;
 	color: var(--color-link);
 	outline: none;
 }
 
-button:hover,
-button:focus {
+.genre-button:hover,
+.genre-button:focus {
 	color: var(--color-link-hover);
 	outline: none;
 }
@@ -63,22 +63,20 @@ button:focus {
 
 /* instead of using classname for <a> elements, applied style directly to them */
 
-button {
+.genre-button {
 	display: inline-block;
 	cursor: pointer;
 	position: relative;
 	-webkit-text-stroke: 1.5px #000;
-	/*text-stroke: 1.5px #000;*/
     stroke-width: 1.5px;
     stroke: #000;
     fill: transparent;
-	-webkit-text-fill-color: transparent;
-	/*text-fill-color: transparent; */
+	-webkit-text-fill-color: transparent; 
 	color: transparent;
 	transition: opacity 0.4s;
 }
 
-button::before {
+.genre-button::before {
 	all: initial;
 	font-family: sofia-pro, sans-serif;
 	counter-increment: menu;
@@ -89,7 +87,7 @@ button::before {
 	pointer-events: none;
 }
 
-button:hover {
+.genre-button:hover {
 	transition-duration: 0.1s;
 	opacity: 0;
 }
@@ -106,7 +104,7 @@ button:hover {
 	transform: translate3d(calc(-100% - 6vw),-30%,0) translate3d(0,20px,0);
 }
 
-button:hover + .genre-img {
+.genre-button:hover + .genre-img {
 	opacity: 1;
 	transform: translate3d(calc(-100% - 6vw),-30%,0) rotate3d(0,0,1,4deg);
 	transition: all 0.4s;
@@ -135,17 +133,17 @@ button:hover + .genre-img {
 	transition: opacity 0.1s;
 }
 
-button:hover ~ .effect .effect-activate {
+.genre-button:hover ~ .effect .effect-activate {
 	animation-play-state: running;
 	opacity: 1;
 	transition-duration: 0.4s;
-}
+} 
 
 .effect span {
 	text-align: center;
 }
 
-button,
+.genre-button,
 .effect span {
 	white-space: nowrap;
 	font-size: var(--item-font-size);
@@ -167,5 +165,5 @@ button,
 		transform: translate3d(var(--move-final), 0, 0);
 	}
 }
-/* w dont need frame styling bs at the end
-*/
+/* w dont need frame styling bs at the end */
+
