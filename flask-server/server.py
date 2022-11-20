@@ -16,6 +16,7 @@ def home():
 
 @app.route("/playlist")
 def getSongs():
+    
     genres = request.args.get("genres")
     text = request.args.get("text")
     emotion = hf.get_emotion_keywords(text)
@@ -25,4 +26,4 @@ def getSongs():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=8000)
