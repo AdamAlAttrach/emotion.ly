@@ -1,14 +1,11 @@
 import React from 'react'
-import InputText from './components/InputText/InputText'
-import Layout from "./components/InputText/InputText"
+import Layout from "./components/Layout"
 import './index.css'
-import Genres from './components/genres/Genres'
 
 function App() {
   return (
     <div>
-      <InputText />
-      <Genres />
+      <Layout />
 
     </div>
 
