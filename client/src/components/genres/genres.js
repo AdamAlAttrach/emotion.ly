@@ -144,8 +144,8 @@ const Genres = ({genres, setGenres}) => {
                 </div>
             </div>
             <div className="genre Reggae">
-                <a name="genres" onClick={handleChange}>Reggae</a>
-                <img className="genre-img" src="./images/reggae.jpg" alt="Reggae icon"></img>
+                <button name="genres" onClick={handleChange}>Reggae</button>
+                <img className="genre-img" src={reggae_img} alt="Reggae icon"></img>
                 <div className="effect">
                     <div className="effect-activate" aria-hidden="true">
                         <span>Reggae</span>

@@ -15,10 +15,11 @@ export const Layout = () => {
   return (
     <div>
       <InputText setText = {setText}/>
-      <Genres genres = {genres} setGenres = {setGenres}/>
       <button onClick={handleSubmit} class="bg-indigo-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
         I feel you
       </button>
+      <Genres genres = {genres} setGenres = {setGenres}/>
+    
   
     </div>
 
