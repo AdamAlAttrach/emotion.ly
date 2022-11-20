@@ -4,7 +4,7 @@ import json
 
 CLIENT_ID = "0ac9bed4afae4f54a89cf95f43c0542f"
 CLIENT_SECRET = "2bb61656c350462bb4a3bfb16acf3026"
-OAUTH_TOKEN = "BQDOzo3LJnvkGvuYNsv_dzkhh-5ObaIL5MJMElXAKcDfz78xeEmKBgLrVoO36wNLG6KTtxUC2GiF35rfzLCWlgYEJ37mTv8fDzgwa0uMCXzkBUCX7ibZvcOylVJC8vjMYr595y_h7fB5oJ9fU2HeBC944c-aEw_ns7h6hEmoFEhkhX4W"
+OAUTH_TOKEN = "BQDy9zu4-hKeoMw9hJ1xKHS2F16WnRe0IWcW1VJ65KjJSU7lKPZWBhheqvk3qYShBVak3PQU5yWFWuHGTxHhlKfBNxV3zAaVd_tqBv7KTn6zkz5DcM2Z6tlpUnjxZbKgaeFc-CA53meoCUPEfHKInufpybRpYRK0QZK38hML-6bmj-Wj"
 emotion_to_energy_valence = {"Angry": [-0.4, 0.79], "Fear": [-0.12, 0.79],
                              "Happy": [0.89, 0.17], "Sad": [-0.81, -0.4], "Surprise": [0.7, 0.71]}
 
