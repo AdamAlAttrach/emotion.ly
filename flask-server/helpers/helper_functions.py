@@ -4,7 +4,7 @@ import json
 
 CLIENT_ID = "0ac9bed4afae4f54a89cf95f43c0542f"
 CLIENT_SECRET = "2bb61656c350462bb4a3bfb16acf3026"
-OAUTH_TOKEN = "BQBIby2ZSIWIw_Gn2rOoWnEptnFzmH-nANOr47GgtL-dAYbLse8B5xY5ttnHG3iGdFtNF9LGYTKytd0mgVbZSFCO97YnGMr6BXtU1De2hXgQN2GnoOkfTygF3vnpKh29Dm4tjM1MhRFoJ6nu5LrdDePNaUqmaijxG3H6fpLPffhu9d2z"
+OAUTH_TOKEN = "BQDW6njaarJ7540q_DCXm5wYNfcs-jnCsCoKAQOA1hm7tniCFVWwxWAEQCbrx382R5rUSU0eYW5XYjpGjrmwzZg35vegWpleDquSA2zi0siwfCd3wgKjvrmiNgS9bfKmXHRAUh8ApaJ-phvf1A-zXvqN4alV3yXPV0rZ4_wedmTFSmUP"
 
 emotion_to_energy_valence = {"Angry": [-0.4, 0.79], "Fear": [-0.12, 0.79],
                              "Happy": [0.89, 0.17], "Sad": [-0.81, -0.4], "Surprise": [0.7, 0.71]}
@@ -28,9 +28,9 @@ def get_valence_energy(emotions):
     return final_point
 
 
-def get_songs(valence, energy, limit, genres_arr):
+def get_songs(valence, energy, limit, genres):
 
-    genres = ','.join(genres_arr)
+    #genres = ','.join(genres_arr)
 
     final_json = {'tracks': []}
 
@@ -103,7 +103,7 @@ def add_mp3_url(songs_json):
         i['audio'] = mp3_url
         i['active'] = False
         i['color'] = ["#CD607D", "#c94043"]
-
+        print(i)
     songs_json['tracks'][0]['active'] = True
 
     return songs_json

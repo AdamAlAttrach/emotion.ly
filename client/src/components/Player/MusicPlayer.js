@@ -6,7 +6,7 @@ import "./player.css";
 import Player from "./components/Player";
 import Song from "./components/Song";
 import Library from "./components/Library";
-import Nav from "./components/Nav";
+import NavBar from "./components/NavBar";
 
 
 const MusicPlayer = ({playlist}) => {
@@ -56,8 +56,8 @@ const MusicPlayer = ({playlist}) => {
 	};
 
 	return (
-		<AppContainer libraryStatus={libraryStatus}>
-			<Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
+		<AppContainer className = "music-body" libraryStatus={libraryStatus}>
+			<NavBar libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
 			<Song currentSong={currentSong} />
 			<Player
 				isPlaying={isPlaying}
@@ -94,7 +94,7 @@ const AppContainer = styled.div`
 	margin-left: ${(p) => (p.libraryStatus ? "20rem" : "0")};
 	@media screen and (max-width: 768px) {
 		margin-left: 0;
-	};
+	}
 `;
 
 export default MusicPlayer;

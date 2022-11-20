@@ -3,14 +3,14 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMusic } from "@fortawesome/free-solid-svg-icons";
 
-const Nav = ({ libraryStatus, setLibraryStatus }) => {
+const NavBar = ({ libraryStatus, setLibraryStatus }) => {
 	return (
 		<NavContainer>
 			<H1 libraryStatus={libraryStatus}>Emotion.ly</H1>
-			<Button onClick={() => setLibraryStatus(!libraryStatus)}>
+			<ButtonNav onClick={() => setLibraryStatus(!libraryStatus)}>
 				My Playlist {`\t`}
 				<FontAwesomeIcon icon={faMusic} />
-			</Button>
+			</ButtonNav>
 		</NavContainer>
 	);
 };
@@ -39,7 +39,7 @@ const H1 = styled.h1`
 	}
 `;
 
-const Button = styled.button`
+const ButtonNav = styled.button`
 	background: transparent;
 	border: none;
 	cursor: pointer;
@@ -52,4 +52,4 @@ const Button = styled.button`
 	}
 `;
 
-export default Nav;
+export default NavBar;
