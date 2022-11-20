@@ -57,19 +57,22 @@ const MusicPlayer = ({playlist}) => {
 
 	return (
 		<AppContainer className = "music-body" libraryStatus={libraryStatus}>
-			<NavBar libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
-			<Song currentSong={currentSong} />
-			<Player
-				isPlaying={isPlaying}
-				setIsPlaying={setIsPlaying}
-				currentSong={currentSong}
-				setCurrentSong={setCurrentSong}
-				audioRef={audioRef}
-				songInfo={songInfo}
-				setSongInfo={setSongInfo}
-				songs={songs}
-				setSongs={setSongs}
-			/>
+			<div className="music-body-div">
+				<NavBar libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
+				<Song currentSong={currentSong} />
+				<Player
+					isPlaying={isPlaying}
+					setIsPlaying={setIsPlaying}
+					currentSong={currentSong}
+					setCurrentSong={setCurrentSong}
+					audioRef={audioRef}
+					songInfo={songInfo}
+					setSongInfo={setSongInfo}
+					songs={songs}
+					setSongs={setSongs}
+				/>
+			</div>
+			
 			<Library
 				songs={songs}
 				setCurrentSong={setCurrentSong}
@@ -94,6 +97,7 @@ const AppContainer = styled.div`
 	margin-left: ${(p) => (p.libraryStatus ? "20rem" : "0")};
 	@media screen and (max-width: 768px) {
 		margin-left: 0;
+		margin-bottom: 0;
 	}
 `;
 
